@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.lisixing.ProBarView.widget.RectProBarView
+    <com.lisixing.ProBarView.widget.ProgressBar.RectProBarView
         android:id="@+id/rectProBarView"
         android:layout_width="300dp"
         android:layout_height="30dp"

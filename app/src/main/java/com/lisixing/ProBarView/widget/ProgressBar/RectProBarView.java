@@ -1,4 +1,4 @@
-package com.lisixing.ProBarView.widget;
+package com.lisixing.ProBarView.widget.ProgressBar;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -36,16 +36,17 @@ public class RectProBarView extends View {
         proPaint.setAntiAlias(true);
         fillPaint.setAntiAlias(true);
         strokePaint.setAntiAlias(true);
-        TypedArray typedArray=context.obtainStyledAttributes(attrs, R.styleable.RectProBarView);
-        int proColor=typedArray.getColor(R.styleable.RectProBarView_ProBarColor, Color.BLACK);
-        int fillColor=typedArray.getColor(R.styleable.RectProBarView_FillBarColor,Color.WHITE);
-        int strokeColor=typedArray.getColor(R.styleable.RectProBarView_StrokeColor,Color.GRAY);
-        float strokeWidth=typedArray.getDimension(R.styleable.RectProBarView_StrokeWidth,0);
-        maxProgress=typedArray.getFloat(R.styleable.RectProBarView_MaxProgress,100);
-        progress=typedArray.getFloat(R.styleable.RectProBarView_DefaultProgress,0);
-        isHorizontal=typedArray.getBoolean(R.styleable.RectProBarView_IsHorizontal,true);
-        mRadius=typedArray.getDimension(R.styleable.RectProBarView_Radius,0);
-        reverse=typedArray.getBoolean(R.styleable.RectProBarView_Reverse,false);
+        TypedArray typedArray=context.obtainStyledAttributes(attrs, R.styleable.ProBarView);
+        TypedArray typedArrayRect=context.obtainStyledAttributes(attrs, R.styleable.RectProBarView);
+        int proColor=typedArray.getColor(R.styleable.ProBarView_ProBarColor, Color.BLACK);
+        int fillColor=typedArray.getColor(R.styleable.ProBarView_FillBarColor,Color.WHITE);
+        int strokeColor=typedArray.getColor(R.styleable.ProBarView_StrokeColor,Color.GRAY);
+        float strokeWidth=typedArray.getDimension(R.styleable.ProBarView_StrokeWidth,0);
+        maxProgress=typedArray.getFloat(R.styleable.ProBarView_MaxProgress,100);
+        progress=typedArray.getFloat(R.styleable.ProBarView_DefaultProgress,0);
+        isHorizontal=typedArrayRect.getBoolean(R.styleable.RectProBarView_IsHorizontal,true);
+        mRadius=typedArrayRect.getDimension(R.styleable.RectProBarView_Radius,0);
+        reverse=typedArray.getBoolean(R.styleable.ProBarView_Reverse,false);
         proPaint.setColor(proColor);
         fillPaint.setColor(fillColor);
         strokePaint.setColor(strokeColor);

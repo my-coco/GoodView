@@ -31,5 +31,7 @@
         <attr name="TextColor" format="color"/>
 <!--        字体尺寸-->
         <attr name="TextSize" format="dimension"/>
+<!--        进度条末端是否为圆-->
+        <attr name="RoundStrokeCap" format="boolean"/>
     </declare-styleable>
 </resources>

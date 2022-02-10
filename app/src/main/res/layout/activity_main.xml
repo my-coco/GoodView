@@ -58,6 +58,7 @@
         app:StrokeWidth="5dp"
         app:TextColor="@android:color/holo_blue_bright"
         app:TextSize="14sp"
+        app:RoundStrokeCap="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +67,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="圆环进度条，属性有：进度条颜色、填充颜色、边框颜色、边框宽度、最大进度、默认进度、反方向、圆环宽度、字体颜色、字体尺寸"
+        android:text="圆环进度条，属性有：进度条颜色、填充颜色、边框颜色、边框宽度、最大进度、默认进度、反方向、圆环宽度、字体颜色、字体尺寸、进度条末端样式"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

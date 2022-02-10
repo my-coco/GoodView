@@ -52,6 +52,10 @@ public class CircleProBarView extends View {
         reverse=typedArray.getBoolean(R.styleable.ProBarView_Reverse,false);
         mCircleWidth= (int) typedArrayCircle.getDimension(R.styleable.CircleProBarView_CircleWidth,0);
         mTextSize= (int) typedArrayCircle.getDimension(R.styleable.CircleProBarView_TextSize,14);
+        Boolean roundStrokeCap=typedArrayCircle.getBoolean(R.styleable.CircleProBarView_RoundStrokeCap,false);
+        if(roundStrokeCap){
+            proPaint.setStrokeCap(Paint.Cap.ROUND);
+        }
         proPaint.setColor(proColor);
         fillPaint.setColor(fillColor);
         strokePaint.setColor(strokeColor);
@@ -74,24 +78,25 @@ public class CircleProBarView extends View {
         mHeight=MeasureSpec.getSize(heightMeasureSpec);
         setMeasuredDimension(mWidth,mHeight);
         strokeRect1=new RectF(mStrokeWidth/2,mStrokeWidth/2,mWidth-mStrokeWidth/2,mHeight-mStrokeWidth/2);
+        fillRect=new RectF(mCircleWidth/2+mStrokeWidth,mCircleWidth/2+mStrokeWidth,mWidth-mCircleWidth/2-mStrokeWidth,mHeight-mCircleWidth/2-mStrokeWidth);
         proRect=new RectF(mCircleWidth/2+mStrokeWidth,mCircleWidth/2+mStrokeWidth,mWidth-mCircleWidth/2-mStrokeWidth,mHeight-mCircleWidth/2-mStrokeWidth);
         strokeRect2=new RectF(mStrokeWidth+mCircleWidth,mStrokeWidth+mCircleWidth,mWidth-mStrokeWidth-mCircleWidth,mHeight-mStrokeWidth-mCircleWidth);
-        fillRect=new RectF(mCircleWidth/2+mStrokeWidth,mCircleWidth/2+mStrokeWidth,mWidth-mCircleWidth/2-mStrokeWidth,mHeight-mCircleWidth/2-mStrokeWidth);
+
 
     }
+
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawArc(strokeRect1,-90,360,false,strokePaint);
+        canvas.drawArc(fillRect,-90,360,false,fillPaint);
         if (reverse){
             float angle=progress/maxProgress*360;
             canvas.drawArc(proRect,-90,-angle,false,proPaint);
-            canvas.drawArc(fillRect,-angle-90,-360+angle,false,fillPaint);
         }else{
             float angle=progress/maxProgress*360;
             canvas.drawArc(proRect,-90,angle,false,proPaint);
-            canvas.drawArc(fillRect,angle-90,360-angle,false,fillPaint);
         }
         String text=String.valueOf(progress)+"%";
         float textWidth=textPaint.measureText(text);

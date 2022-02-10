@@ -34,4 +34,24 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectProBarView" />
+
+    <com.lisixing.ProBarView.widget.ProgressBar.CircleProBarView
+        android:id="@+id/circleProBarView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="48dp"
+        app:CircleWidth="10dp"
+        app:DefaultProgress="50"
+        app:FillBarColor="@color/black"
+        app:MaxProgress="100"
+        app:ProBarColor="@android:color/holo_blue_bright"
+        app:Reverse="true"
+        app:StrokeColor="@android:color/holo_green_light"
+        app:StrokeWidth="5dp"
+        app:TextColor="@color/black"
+        app:TextSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

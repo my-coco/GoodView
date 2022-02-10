@@ -23,4 +23,13 @@
 <!--        是否垂直-->
          <attr name="IsHorizontal" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="CircleProBarView">
+<!--        圆环宽度-->
+        <attr name="CircleWidth" format="dimension"/>
+<!--        字体颜色-->
+        <attr name="TextColor" format="color"/>
+<!--        字体尺寸-->
+        <attr name="TextSize" format="dimension"/>
+    </declare-styleable>
 </resources>

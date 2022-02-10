@@ -55,6 +55,7 @@ public class RectProBarView extends View {
         strokePaint.setStyle(Paint.Style.FILL);
         strokePaint.setStrokeWidth(strokeWidth);
         typedArray.recycle();
+        typedArrayRect.recycle();
     }
 
     @Override

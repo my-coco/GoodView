@@ -62,7 +62,7 @@ public class CircleProBarView extends View {
         proPaint.setStyle(Paint.Style.STROKE);
         fillPaint.setStyle(Paint.Style.STROKE);
         strokePaint.setStyle(Paint.Style.STROKE);
-        textPaint.setStrokeWidth(mTextSize);
+        textPaint.setTextSize(mTextSize);
         typedArray.recycle();
         typedArrayCircle.recycle();
     }
@@ -93,6 +93,13 @@ public class CircleProBarView extends View {
             canvas.drawArc(proRect,-90,angle,false,proPaint);
             canvas.drawArc(fillRect,angle-90,360-angle,false,fillPaint);
         }
+        String text=String.valueOf(progress)+"%";
+        float textWidth=textPaint.measureText(text);
+        float textX=mWidth/2-textWidth/2;
+        Paint.FontMetrics fontMetrics=textPaint.getFontMetrics();
+        float dy=(fontMetrics.descent-fontMetrics.ascent)/2-fontMetrics.descent;
+        float textY=mHeight/2+dy;
+        canvas.drawText(text,textX,textY,textPaint);
         canvas.drawArc(strokeRect2,-90,360,false,strokePaint);
     }
 

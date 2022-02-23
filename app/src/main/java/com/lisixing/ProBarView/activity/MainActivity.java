@@ -1,4 +1,4 @@
-package com.lisixing.ProBarView;
+package com.lisixing.ProBarView.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.lisixing.ProBarView.R;
 import com.lisixing.ProBarView.widget.ProgressBar.CircleProBarView;
 import com.lisixing.ProBarView.widget.ProgressBar.RectProBarView;
 
